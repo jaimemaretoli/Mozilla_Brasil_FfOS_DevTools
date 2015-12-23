@@ -1,0 +1,698 @@
+<!doctype html>
+<html lang="pt-br">
+
+	<head>
+		<title>Firefox OS e DevTools | Mozilla</title>
+
+		<meta charset="utf-8">
+		<meta name="description" content="Firefox OS, Ferramentas de Desenvolvimento e muito mais!">
+		<meta name="author" content="Jaime Maretoli">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+				<div style="position:relative; top:-391px; left:150px;">
+					<img src="design/top-12.png">
+				</div>
+
+				<!-- ADICIONAR O LINK DA APRESENTACAO NA WEB -->
+
+				<section data-background="design/fundo_mozilla-36.png">
+					<section>
+						<img src="design/logo_ffos.png" width="800px" />
+						<h2>A Web é a plataforma</h2>
+						<a target="_blank" href="http://mozillabrasil.org.br/participe/">
+							<h4>Seja um Mozillian!</h4>
+						</a>
+						<br />
+						<br />
+						<a target="_blank" href="http://jaimemaretoli.com/ffos">
+							<h4>LINK DA APRESENTAÇÃO: jaimemaretoli.com/ffos</h4>
+						</a>
+						<p>
+							<small>
+								Apresentação Criada pela Comunidade Mozilla Brasil | <a target="_blank" href="http://jaimemaretoli.com/">Jaime Maretoli</a>
+							</small>
+						</p>
+					</section>
+					<section>
+						<div style="position:relative; width:120%; left:-10%;">
+							<p>Conheça o Manifesto Mozilla e saiba o que pensamos e como pensamos.</p>
+							<video src="movies/manifesto.theora.ogv" width="1400" controls></video>
+						</div>
+					</section>
+					<section>
+						<div style="position:relative; width:120%; left:-10%;">
+							<p>Lutamos por uma internet de todos para todos.</p>
+							<video src="movies/dtpt.theora.ogv" width="1400" controls>
+							</video>
+						</div>
+					</section>
+				</section>
+
+				<section data-background="design/fundo_mozilla-36.png" class="fotoperfil">
+					<header>
+						<h3>Jaime Maretoli</h3>
+						<img src="design/avatar.jpg" width="250px" style="border-radius: 50%;
+border: 5px solid #FFF;
+box-shadow: 0px 0px 1px #EEE;"/>
+						<ul>
+							<li>Técnico em Informática formado pelo Senac</li>
+							<li>Bacharelando em Ciência da Computação</li>
+							<LI>Pesquisador na área de Desenvolvimento Móvel</Li>
+							<li>Mozillian desde Fevereiro de 2015</li>
+							<li>Membro do Hackerspace Laboratório Hacker</li>
+							<li>Sempre em eventos por aí...</li>
+						</ul>
+					</header>
+				</section>
+
+				<section data-background="design/fundo_mozilla-36.png">
+					<h2>Você conhece a Mozilla?</h2>
+					<img src="design/Summit.gif" width="1000px" />
+				</section>
+
+				<section data-background="design/fundo_mozilla-36.png">
+					<h3>História</h3>
+					<span style="font-size: 35px; text-align: justify; float: left;">
+						<ol start="1998">
+							<li>O Projeto Mozilla nasceu com o lançamento do código fonte do navegador Netscape</li>
+						</ol>
+						<ol start="2002">
+							<li>Lançamento do Mozilla 1.0: A Primeira Grande Versão</li>
+						</ol>
+						<ol start="2003">
+							<li>Criação Fundação Mozilla Sem Fins Lucrativos</li>
+						</ol>
+						<ol start="2004">
+							<li>Na versão 1.0 do Firefox, +10.000 apoiaram à missão Mozilla pagando um anúncio New York Times</li>
+						</ol>
+					</span>
+				</section>
+
+				<section data-background="design/fundo_mozilla-36.png">
+					<h3>História</h3>
+					<img src="design/NYT_Firefox_1.0.png" width="750px"/>
+				</section>
+
+				<section data-background="design/fundo_mozilla-36.png">
+					<h3>História</h3>
+					<span style="font-size: 35px; text-align: justify; float: left;">
+						<ol start="2005">
+							<li>Reorganização da Fundação: Criação da Corporação Mozilla</li>
+						</ol>
+						<ol start="2008">
+							<li>Recorde Guinness World Record: Maior número de downloads em 24h</li>
+						</ol>
+						<ol start="2010">
+							<li>1º Navegador Móvel com complementos: Firefox Móvel tornou-se disponível na plataforma Nokia Maemo</li>
+						</ol>
+						<ol start="2011">
+							<li>Início do projeto do Firefox OS</li>
+						</ol>
+						<ol start="2013">
+							<li>Mozilla nomeada a empresa de Internet mais confiável</li>
+						</ol>
+						<ol start="2013">
+							<li>Firefox OS Lançado na Mobile World Congress</li>
+						</ol>
+						<ol start="2013">
+							<li>Firefox OS com primeiros telefones comerciais na Espanha</li>
+						</ol>
+						<ol start="2014">
+							<li>Lançamento do Firefox redesenhado e com muitas novidades</li>
+						</ol>
+					</span>
+				</section>
+
+				<section data-background="design/fundo_mozilla-36.png">
+					<section>
+						<h3>Comunidade</h3>
+						<q>"Trabalha em conjunto para manter a Internet viva e acessível para que todos sejam contribuidores e criadores da Web com uma plataforma de código aberto"</q>
+						<br/>
+						<br/>
+						<q>"Hoje a Mozilla tem colaboradores em cada continente, incluindo a Antártida (onde o Firefox é usado por 80% da população)"</q>
+						<br/>
+						<br/>
+						<q>"A comunidade ajudou a traduzir o Firefox para 70 idiomas, tornando o navegador disponível para mais de 90% da população mundial"</q>
+						<br/>
+						<br/>
+						<a href="https://www.mozilla.org/pt-BR/about/manifesto/">Manifesto Mozilla</a><br/>
+						<a style="font-size: 25px;" href="https://www.mozilla.org/pt-BR/about/manifesto/">https://www.mozilla.org/pt-BR/about/manifesto/</a>
+					</section>
+					<section>
+						<h3>Na prática...</h3>
+						<p style="text-align: justify; font-size: 30px;">"Fazemos parte de uma comunidade global de pessoas que acreditam que a inovação, liberdade e oportunidade são a chave para a saúde contínua da Internet"</p>
+						<img src="design/Compilado_Projetos_Moz.svg" width="700px" />
+					</section>
+					<section>
+						<p style="font-style: italic;">"Somos programadores, advogados, cientistas, designers, estudantes... Somos pessoas comuns que lutam para garantir a sua liberdade e direito de expressão."</p>
+					</section>
+				</section>
+
+				<section data-background="design/fundo_mozilla-36.png">
+					<h3>Produtos e Projetos</h3>
+					<img src="design/Projetos_Mozilla.svg" width="1500px" />
+				</section>
+
+				<section data-background="design/fundo_mozilla-36.png">
+					<h2>Mozilla Firefox</h2>
+					<img src="design/firefox.svg" width="300px" />
+					<span style="text-align: justify;">
+						<p><em>"Orgulhosamente <strong>sem fins lucrativos</strong>, a Mozilla produz produtos como o Firefox com a missão de manter o poder da Web nas mãos dos usuários, pelo mundo inteiro e com <strong>4 bilhões de complementos já instalados</strong> até agora"</em></p>
+					</span>
+				</section>
+
+				<section data-background="design/fundo_mozilla-36.png">
+					<h2>Mozilla Firefox</h2>
+					<img src="design/Navegadores.png" width="600px" />
+				</section>
+
+				<section data-background="design/fundo_mozilla-36.png">
+					<h2>Firefox OS</h2>
+					<img src="design/FFOS.png" width="500px" />
+				</section>
+
+				<section data-background="design/fundo_mozilla-36.png">
+					<h2 style="font-style: italic;">"Foco nos mercados emergentes. Onde o acesso a esses equipamentos é caro e limitado"</h2>
+				</section>
+
+				<section data-background="design/fundo_mozilla-36.png">
+					<h2>Arquitetura</h2>
+					<br />
+					<div class="partes">
+	            			<div class="gonk box">
+								<h2>Gonk</h2>
+								<p>Kernel GNU/Linux baseado no AOSP (Android Open Source Project), Device drivers e camada de abstração do hardware</p>
+							</div>
+							<div class="gecko box fragment">
+								<h2>Gecko</h2>
+								<p>Motor de JS e Renderização de HTML, APIs amigáveis para acesso ao hardware</p>
+							</div>
+							<div class="gaia box fragment">
+								<h2>Gaia</h2>
+								<p>Coleção de aplicativos web que fazem a UI</p>
+							</div>
+					</div>
+				</section>
+
+				<section data-background="design/fundo_mozilla-36.png">
+					<h1>Novos Mercados</h1>
+					<div class="partes">
+						<div class="gonk box">
+							<h3>Hardware Acessível</h3>
+						</div>
+						<div class="gecko box fragment">
+							<h3>Principal<br />Experiência: Tecnologias Web</h3>
+						</div>
+					</div>
+				</section>
+
+        		<section data-background="design/fundo_mozilla-36.png">
+        			<h2>Recursos</h2>
+        			<br />
+	        		<div class="partes">
+	        			<div class="box">
+	        				<h3>Geolocalização</h3>
+	        			</div>
+	        			<div class="box">
+	        				<h3>Bluetooth</h3>
+	        			</div>
+	        			<div class="box">
+	        				<h3>Push Notifications</h3>
+	        			</div>
+	        			<div class="box">
+	        				<h3>Bateria</h3>
+	        			</div>
+	        		</div>
+        		</section>
+
+        		<section data-background="design/fundo_mozilla-36.png">
+        			<h2>Contribuição da Comunidade</h2>
+        			<div class="partes">
+	        			<div class="box">
+	        				<p>Evolução das WebAPIs</p>
+	        			</div>
+	        			<div class="box">
+	        				<p>Usabilidade</p>
+	        			</div>
+	        			<div class="box">
+	        				<p>Localização</p>
+	        			</div>
+	        			<div class="box">
+	        				<p>Desenvolvimento de Apps</p>
+	        			</div>
+	        			<div class="box">
+	        				<p>Disseminação</p>
+	        			</div>
+	        			<div class="box">
+	        				<p>E muitos mais...</p>
+	        			</div>
+	        		</div>
+      			</section>
+
+      			<section data-background="design/fundo_mozilla-36.png">
+      				<h3>Ferramentas de</h3>
+      				<h2>Desenvolvimento</h2>
+      				<img src="design/firefox-developer-edition.png" style="width: 410px; padding: 10px 10px;">
+      				<img src="design/firefox.svg" style="width: 370px; padding: 10px 10px;">
+				</section>
+
+				<section data-background="design/fundo_mozilla-36.png">
+					<h3>Barra de Ferramentas</h3>
+					<p>Menu Ferramentas > Desenvolvedor Web > Exibir Ferramentas</p>
+					<p>Atalho: F12</p>
+      				<img src="design/devtools.png" style="width: auto;">
+				</section>
+
+				<section data-background="design/fundo_mozilla-36.png">
+					<h3>Inspetor</h3>
+					<p>Menu Ferramentas > Desenvolvedor Web > Inspetor</p>
+					<p>Atalho: Option + ⌘ + I ou CTRL + I</p>
+					<p>"Mover o mouse pela página, obter informações de elementos e alterá-los"</p>
+					<img src="design/Inspetor_Barra_Ferramenta.png" style="width: 1300px;">
+				</section>
+
+				<section data-background="design/fundo_mozilla-36.png">
+					<h3>Console</h3>
+					<p>Menu Ferramentas > Desenvolvedor Web > Console Web</p>
+					<p>Atalho: Option + ⌘ + K ou CTRL + K</p>
+					<p>"Permite ver mensagens de erro e outras informações..."</p>
+					<img src="design/Console.png" style="width: 1300px;">
+				</section>
+
+				<section data-background="design/fundo_mozilla-36.png">
+					<h3>Depurador</h3>
+					<p>Menu Ferramentas > Desenvolvedor Web > Depurar</p>
+					<p>Atalho: Option + ⌘ + S ou CTRL + S</p>
+					<p>"Permite percorrer o JavaScript, examinar ou modificar seu estado para ajudar a localizar bugs"</p>
+					<img src="design/Dupurador_DevTool.png" style="width: 1300px;">
+				</section>
+
+				<section data-background="design/fundo_mozilla-36.png">
+					<h3>Monitor de Rede</h3>
+					<p>Menu Ferramentas > Desenvolvedor Web > Rede</p>
+					<p>Atalho: option + ⌘ + Q ou ctrl + Q</p>
+					<p>"Mostra toda a rede que o Firefox solicita e seus detalhes, como quanto tempo leva cada pedido"</p>
+					<img src="design/Monitor_Rede_DevTools.png" style="width: 1300px;">
+				</section>
+
+				<section data-background="design/fundo_mozilla-36.png">
+					<h3>Editor de Estilos</h3>
+					<p>Menu Ferramentas > Desenvolvedor Web > Rede</p>
+					<p>Atalho: shift + fn + F7 ou shift + F7</p>
+					<p>"Mostra todos os estilos, e editá-los."</p>
+					<img src="design/Style_Editor_DevTools.png" style="width: 1300px;">
+				</section>
+
+				<section data-background="design/fundo_mozilla-36.png">
+					<h3>Visualizador de Design Responsivo</h3>
+					<p>Ferramentas > Desenvolvedor Web > Modo Design Adaptável</p>
+					<p>Atalho: ⌘ + option + M ou ctrl + shift + N</p>
+					<p>"Visualizar o Responsivo da Página"</p>
+					<img src="design/Responsivo_DevTools.png" style="width: 500px;">
+				</section>
+
+				<section data-background="design/fundo_mozilla-36.png">
+					<h3>Visualizador 3D</h3>
+					<p>Sem atalho, mas podendo ser configurado.</p>
+					<p>"Faz com que seja fácil de visualizar o aninhamento do conteúdo. Em blocos de HTML."</p>
+					<img src="design/3D_DevTools.png" style="width: 330px;">
+				</section>
+
+				<section data-background="design/fundo_mozilla-36.png">
+					<h3>WebIDE | Simuladores</h3>
+					<p>Ferramentas > Desenvolvedor Web > WebIDE</p>
+					<p>Atalho: shift + F8</p>
+					<p>"Permite criar, editar, executar e depurar Web Apps"</p>
+					<img src="design/WebIDE_DevTools.png" style="width: 750px;">
+				</section>
+
+				<section data-background="design/fundo_mozilla-36.png">
+					<h3>E muito mais...</h3>
+					<img src="design/Mais_DevTools.png" style="width: 550px;">
+				</section>
+
+      			<section data-background="design/fundo_mozilla-36.png">
+      				<h3>Marketplace</h3>
+      				<p>"Permite criar, editar, executar e depurar Web Apps"</p>
+					<img src="design/marketplace.png" width="500px" />
+				</section>
+
+				<section data-background="design/fundo_mozilla-36.png">
+      				<h3>Usabilidade</h3>
+					<img src="design/Use_Marketplace.png" width="500px" />
+				</section>
+
+      			<section data-background="design/fundo_mozilla-36.png">
+      				<h2>Tipos de Assinatura</h2>
+      				<div class="partes">
+      					<div class="hospedados box fragment">
+      						<h3>Apps hospedados</h3>
+      						<ul>
+      							<li>Armazenada no seu servidor;</li>
+      							<ul>
+      								<li>Páginas do GitHub;</li>
+      							</ul>
+      							<li>Fácil de atualizar;</li>
+      							<li>Acesso ao hardware limitado;</li>
+      							<ul>
+      								<li>Aberto pelo navegador;</li>
+      								<li>Processado pelo seu servidor;</li>
+      							</ul>
+      							<li>Deve conter a URL do manifesto para seu aplicativo;</li>
+      							<li>Funciona como um atalho;</li>
+      					</div>
+      				</div>
+				</section>
+
+				<section data-background="design/fundo_mozilla-36.png">
+      				<h2>Tipos de Assinatura</h2>
+      				<div class="partes">
+      					<div class="privilegiados box fragment">
+      						<h3>Apps empacotados</h3>
+      						<ul>
+      							<li>Verificado pelo Marketplace;</li>
+      							<li>Utiliza uma Politica de Segurança de Conteúdo;</li> 
+      							<li>Armazenado em servidores da Marketplace;</li>
+      							<li>Empacotado em um arquivo ".zip";</li>
+      							<li>É baixado para o Aparelho;</li>
+      							<ul>
+      								<li>Acesso offline;</li>
+      							</ul>
+      							<li>Manifesto na raiz;</i>
+      						</ul>
+      					</div>
+      				</div>
+				</section>
+
+				<section data-background="design/fundo_mozilla-36.png">
+      				<h3>Manifesto do Aplicativo</h3>
+      				<a target="_blank" href="https://developer.mozilla.org/pt-BR/Apps/Manifest">https://developer.mozilla.org/pt-BR/Apps/Manifest</a>
+      						<pre>
+{
+  "version": "1.0",
+  "name": "MozillaBall",
+  "description": "Exciting Open Web development action!",
+  "icons": {
+    "16": "/img/icon-16.png",
+    "48": "/img/icon-48.png",
+    "128": "/img/icon-128.png"
+  },
+  "developer": {
+    "name": "Mozilla Labs",
+    "url": "http://mozillalabs.com"
+  },
+    "it": {
+      "description": "Azione aperta emozionante di sviluppo di [...]",
+      "developer": {
+        "url": "http://it.mozillalabs.com/"
+      }
+  },
+  "default_locale": "en"
+  [...]
+}
+      						</pre>
+				</section>
+
+				<section data-background="design/fundo_mozilla-36.png">
+      				<a target="_blank" href="https://developer.mozilla.org/en-US/Marketplace/Publishing/Submit/Overview">
+      					<h2>Envio a Marketplace</h2>
+      				</a>
+      				<br />
+					<ol>
+						<li>Login na sua conta de desenvolvedor;</li>
+						<li>Carregar seu aplicativo;</li>
+						<li>Informar os detalhes aplicativo;</li>
+						<li>Obter a informação do conteúdo;</li>
+						<li>Disponibilidade de Atualização;</li>
+						<li>Definir se o App é pago ou/e possui compras dentro do App;</li>
+						<li>[...] Campos opcionais;</li>
+					</ol>
+				</section>
+
+				<section data-background="design/fundo_mozilla-36.png">
+      				<h2>Envio a Marketplace</h2>
+					<video src="movies/App_Marketplace.webm" width="1600px" controls></video>
+				</section>
+
+      			<section data-background="design/fundo_mozilla-36.png">
+      				<h1>Processo de<br>Aprovação</h1>
+				</section>
+
+      			<section data-background="design/fundo_mozilla-36.png">
+      				<h2>Compatível<br>com Android</h2>
+      				<img src="design/android.png" style="height:500px; width:auto;">
+				</section>
+
+      			<section data-background="design/fundo_mozilla-36.png">
+      				<h1>Produtos</h1>
+				</section>
+
+      			<section data-background="design/fundo_mozilla-36.png">
+      				<h2>LG Fireweb</h2>
+      				<img src="design/fireweb.png" style="height:500px; width:auto;">
+				</section>
+
+				<section data-background="design/fundo_mozilla-36.png">
+      				<h2>Alcatel One Touch Fire</h2>
+      				<img src="design/alcatel.png" style="height:500px; width:auto;">
+				</section>
+
+				<section data-background="design/fundo_mozilla-36.png">
+      				<h3>Panasonic</h3><h2>Smart TV</h2>
+					<video src="movies/Panasonic_FFOS.mp4" width="1400" controls>
+				</section>
+
+				<section data-background="design/fundo_mozilla-36.png">
+      				<h3>Matchstick</h2>
+      				<p style="font-style: italic;">"Dongle de streaming de conteúdo para TV"</p>
+					<img src="design/matchstick.jpg" style="height:500px; width:auto;">
+				</section>
+
+				<section data-background="design/fundo_mozilla-36.png">
+      				<h1>Graças ao Software Livre...</h1>
+				</section>
+				
+				<section data-background="design/fundo_mozilla-36.png">
+      				<h3>LG FxO</h3>
+      				<p style="font-style: italic;">"Visual transparente..."</p>
+      				<img src="design/LG-Fx0.png" style="height:500px; width:auto;">
+				</section>
+
+				<section data-background="design/fundo_mozilla-36.png">
+      				<h3>Runcible</h2>
+      				<p style="font-style: italic;">"Relógio de bolso inteligente"</p>
+					<video src="movies/Runcible_FFOS.mp4" width="1400" controls>
+				</section>
+
+				<section data-background="design/fundo_mozilla-36.png">
+					<h2>Mozilla Developer Network</h2>
+					<img src="design/mdn.svg" width="550px" />
+					<br />
+					<a target="_blank" href="https://developer.mozilla.org/pt-BR/">developer.mozilla.org</a>
+				</section>
+
+				<section data-background="design/fundo_mozilla-36.png">
+					<h2>Mozilla Developer Network</h2>
+					<img src="design/MDN_Plataforma.png" width="900px" />
+					<br />
+					<a target="_blank" href="https://developer.mozilla.org/pt-BR/">developer.mozilla.org</a>
+				</section>
+
+				<section data-background="design/fundo_mozilla-36.png">
+					<h3>Mozilla Learning Network</h3>
+					<p>https://teach.mozilla.org/</p>
+					<p>"Oferece programas, instruções, documentos e uma comunidade para ajudar pessoas a aprender o mundo digital"</p>
+					<img src="design/MLN.png" style="width: 900px;">
+				</section>
+
+				<section data-background="design/fundo_mozilla-36.png">
+					<h3>X-Ray Goggles</h3>
+					<a target="_blank" href="https://webmaker.org/goggles">webmaker.org/goggles</a>
+					<p>"Permite visualizar e alterar páginas da web de forma mais intuitiva"</p>
+					<img src="design/xray-goggles.jpg" style="width: 500px;">
+				</section>
+
+				<section data-background="design/fundo_mozilla-36.png">
+					<h3>X-Ray Goggles</h3>
+					<a target="_blank" href="https://webmaker.org/goggles">webmaker.org/goggles</a>
+					<br />
+					<img src="design/X-Ray_Web.png" style="width: 700px;">
+				</section>
+
+				<section data-background="design/fundo_mozilla-36.png">
+					<h3>Thimble</h3>
+					<a target="_blank" href="https://beta.webmaker.org/">thimble.mozilla.org</a>
+					<p>"Ajuda a aprender a Web, criando e remixando projetos da Web"</p>
+					<img src="design/thimble-logo.svg" style="width: auto;">
+				</section>
+
+				<section data-background="design/fundo_mozilla-36.png">
+					<h3>Thimble</h3>
+					<a target="_blank" href="https://beta.webmaker.org/">thimble.mozilla.org</a>
+					<br />
+					<img src="design/Thimble_Web.png" style="width: 1200px;" />
+				</section>
+
+				<section data-background="design/fundo_mozilla-36.png">
+					<h3>Webmaker</h3>
+					<a target="_blank" href="https://beta.webmaker.org/">beta.webmaker.org</a>
+					<p>"Permite criar, descobrir e compartilhar conteúdos de seu dispositivo móvel"</p>
+					<img src="design/webmaker.png" style="width: 450px;">
+				</section>
+
+				<section data-background="design/fundo_mozilla-36.png">
+					<h3>Webmaker</h3>
+					<a target="_blank" href="https://beta.webmaker.org/">beta.webmaker.org</a><br />
+					<img src="design/WebMaker_App.png" style="width: 300px;">
+				</section>
+
+				<section data-background="design/fundo_mozilla-36.png">
+					<img src="design/mozbr.png" width="500px" />
+					<br />
+					<a target="_blank" href="http://www.mozillabrasil.org.br/">www.mozillabrasil.org.br</a>
+				</section>
+
+				<section data-background="design/fundo_mozilla-36.png">
+      				<h2>Atualmente<br />Problema vivido no Brasil</h2>
+      				<br />
+      				<div class="partes" style="text-align: left;">
+	      				<div class="box">
+							<ol>
+									<li>Luta pelo espaço no mercado:</li>
+									<ul>
+										<li>Quantidade de dispositivos que está disponível;</li>
+									</ul>
+									<li>Sem aparelhos no Brasil;</li>
+									<li>Baixo custo:</li>
+									<ul>
+										<li>Importação;</li>
+									</ul>
+									<li>Não atualização das operadoras;</li>
+									<li>Falta de aplicativos populares:</li>
+									<ul>
+										<li>WhatsApp;</li>
+									</ul>
+							</ol>
+						</div>
+					</div>
+				</section>
+
+				<section data-background="design/fundo_mozilla-36.png">
+      				<h1>Mudança</h1>
+      				<br />
+      				<div class="partes" style="text-align: left;">
+	      				<div class="box">
+							<ol>
+								<li>Novos rumos:</li>
+								<ul>
+									<li>Reestruturação</li>
+								</ul>
+								<li>Maior foco na qualidade;</li>
+								<li>Enfrentamento com outra plataformas;</li>
+								<li>Migração de apps de outras plataformas;</li>
+								<li>Que venha ainda mais o sucesso!</li>
+							</ol>
+						</div>
+					</div>
+				</section>
+
+				<section data-background="design/fundo_mozilla-36.png">
+					<h3>Obrigado!</h3>
+					<img src="design/avatar.jpg" width="250px" style="border-radius: 50%; border: 5px solid #FFF; box-shadow: 0px 0px 1px #EEE;"/>
+					<br />
+					<ul>
+						<li><a href="mailto: jm@jaimemaretoli.com">E-Mail - jm@jaimemaretoli.com</a></li>
+						<li><a target="_blank" href="https://www.mozilla.org">Site Pessoal - jaimemaretoli.com</a></li>
+						<li><a target="_blank" href="https://mozillians.org/u/jaimemaretoli">Mozillan - https://mozillians.org/u/jaimemaretoli</a></li>
+						<li><a target="_blank" href="https://br.linkedin.com/in/jaimemaretoli">Linkedin - https://br.linkedin.com/in/jaimemaretoli</a></li>
+						<li><a target="_blank" href="https://twitter.com/jaimemaretoli">Twitter - https://twitter.com/jaimemaretoli</a></li>
+						<li><a target="_blank" href="https://github.com/jaimemaretoli">GitHub - https://github.com/jaimemaretoli</a></li>
+						<li><a target="_blank" href="https://diasporabr.com.br/u/jaimemaretoli">diaspora* - https://diasporabr.com.br/u/jaimemaretoli</a></li>
+					</ul>
+				</section>
+
+				<section data-background="design/fundo_mozilla-36.png">
+					<h3>LINKS | DÚVIDAS? | SUGESTÕES</h3>
+					<br />
+					<ul>
+						<li><a href="https://www.mozilla.org">Mozilla - www.mozilla.org</a></li>
+						<li><a href="https://www.mozillabrasil.org">Mozilla Brasil - www.mozillabrasil.org</a></li>
+						<li><a href="https://fb.com/mozillabrasil">FB Mozilla Brasil - fb.com/mozillabrasil</a></li>
+						<li><a href="https://lists.mozilla.org/listinfo/community-brasil">Listas - lists.mozilla.org/listinfo/community-brasil</a></li>
+						<li><a href="https://developer.mozilla.org">MDN - developer.mozilla.org</a></li>
+						<li><a href="https://webmaker.org">Webmaker - webmaker.org</a></li>
+						<li><a href="https://support.mozilla.org/pt-BR/home/">SUMO - support.mozilla.org/pt-BR/home/</a>
+						<li><a href="https://support.mozilla.org/pt-BR/get-involved/army-of-awesome">support.mozilla.org/pt-BR/get-involved/army-of-awesome</a></li>
+						<li><a href="https://www.github.com/hakimel/reveal.js">Reveal.JS - github.com/hakimel/reveal.js</a></li>
+						<li><a href="http://developer.mozilla.org/">http://developer.mozilla.org/</a></li>
+						<li><a href="http://mozilla.org/aurora">http://mozilla.org/aurora</a></li>
+						<li><a href="http://firefoxosbooks.org/">http://firefoxosbooks.org/</a></li>
+						<li><a href="https://github.com/mozilla/firefoxos-quick-start">https://github.com/mozilla/firefoxos-quick-start</a></li>
+					</ul>
+				</section>
+			
+			</div> <!-- TAG FECHANDO OS SLIDES -->
+		</div>
+
+		<style>
+			.partes .box {
+				background:rgba(0,0,0,0.4);
+				box-shadow:0 0 3px rgba(0,0,0,0.6);
+				padding:10px;
+			}
+			.partes .box:not(:last-of-type) {
+				margin-bottom:10px;
+			}
+			.partes .box h2 {
+				font-size:1.6em;
+			}
+		</style>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					//{ src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+					//{ src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+	</body>
+</html>
